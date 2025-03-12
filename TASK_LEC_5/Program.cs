@@ -11,21 +11,21 @@
             {
                 Console.WriteLine("**************************************");
                 Console.WriteLine(@"Please Choose from menu : 
-A - Add Item.
-B - Display Items.
-M - Dispaly Mean of numbers.
-S - Display the smallest number.
-L - Display the largest number.
-R - Sort List.
-F - Find Number.
-C - Clear List.
-Q - Quit Program.");
+A - Add a number
+P - Print numbers
+M - Display mean of the numbers
+S - Display the smallest number
+L - Display the largest number
+R - Sort List
+F - Find a number
+C - Clear list
+Q - Quit");
                 choice = char.ToUpper(Convert.ToChar(Console.ReadLine()));
                 Console.Clear();
                 switch (choice)
                 {
-                    case 'A':
-                        Console.WriteLine("Please Enter Number");
+                    case 'A':  // A - Add a number
+                        Console.WriteLine("Please Enter Number To added The List numbers");
                         bool isInt = int.TryParse(Console.ReadLine(), out int number);
 
                         if (isInt)
@@ -42,7 +42,7 @@ Q - Quit Program.");
                             }
                             if (isDuplicate)
                             {
-                                Console.WriteLine($"Found {number} in List. Are you sure you want to add it again? (Y: Yes, N: No)");
+                                Console.Write($" {number} is already Exites List. Are you sure  want to add it again? (Y: Yes, N: No)");
                                 char chooseDuplicate = char.ToUpper(Convert.ToChar(Console.ReadLine()));
 
                                 if (chooseDuplicate == 'Y')
@@ -71,8 +71,8 @@ Q - Quit Program.");
                             Console.WriteLine("Invalid Number. Please enter a valid number.");
                             Console.WriteLine("-----------------------------------------");
                         }
-                        break; // A - Add Item
-                    case 'B':
+                        break; //A - Add a number
+                    case 'P':
                         if (numbers.Count == 0)
                         {
                             Console.WriteLine("----------------------------");
@@ -87,7 +87,7 @@ Q - Quit Program.");
                             Console.WriteLine($"[ {listshow} ] ");
                             Console.WriteLine("----------------------------");
                         }
-                        break; //B - Display Items
+                        break; //P - Print numbers
                     case 'M': // Mean Numbers In List
                         if (numbers.Count == 0)
                         {
@@ -106,9 +106,9 @@ Q - Quit Program.");
                             }
                             Console.WriteLine("-----------------------------------------");
                             Console.WriteLine($"Mean Numbers In List = {(double)(SumList / numbers.Count)}");
-                            Console.WriteLine("-----------------------------------");
+                            Console.WriteLine("-----------------------------------------");
                         }
-                        break;
+                        break; //M - Display mean of the numbers
                     case 'S': // Smallest Number In List 
                         if (numbers.Count == 0)
                         {
@@ -125,10 +125,11 @@ Q - Quit Program.");
                             {
                                 smallestNmuber = numbers[i] < smallestNmuber ? numbers[i] : smallestNmuber;
                             }
+                            Console.WriteLine("-----------------------------------");
                             Console.WriteLine($"Smallest Number in  List = {smallestNmuber}");
                             Console.WriteLine("-----------------------------------");
                         }
-                        break;
+                        break; //S - Display the smallest number
                     case 'L': // largest  Number In List 
                         if (numbers.Count == 0)
                         {
@@ -149,7 +150,7 @@ Q - Quit Program.");
                             Console.WriteLine($"largest Number in  List = {largestNmuber}");
                             Console.WriteLine("-----------------------------------");
                         }
-                        break;
+                        break; //L - Display the largest number
                     case 'R': // Sort  Number In List 
                         if (numbers.Count == 0)
                         {
@@ -201,7 +202,7 @@ Q - Quit Program.");
                             }
 
                         }
-                        break;
+                        break; //R - Sort List
                     case 'F':
                         if (numbers.Count == 0)
                         {
@@ -247,7 +248,7 @@ Q - Quit Program.");
                             }
 
                         }
-                        break; // A - Add Item
+                        break; //F - Find a number
                     case 'C': // Clear Number In List 
                         if (numbers.Count == 0)
                         {
@@ -275,10 +276,10 @@ Q - Quit Program.");
                             }
 
                         }
-                        break;
+                        break; //C - Clear list
                     case 'Q':
                         Console.WriteLine("Good Bye");
-                        break;
+                        break; //Q - Quit
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
