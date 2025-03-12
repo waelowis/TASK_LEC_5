@@ -4,21 +4,22 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome My App -------");
+            Console.WriteLine("Welcome My App { Wael Mohamed abdou }");
             List<int> numbers = new List<int>();
             char choice;
             do
             {
-                Console.WriteLine("***********************************");
-                Console.WriteLine(@"Please Choos from menu
-A - Add Item
-B - Display Items
-M - Dispaly Mean of numbers
-S - Display the smallest number
-L -  Display the largest number
-R - Sort List
-C - Clear List
-Q - Quit Program");
+                Console.WriteLine("**************************************");
+                Console.WriteLine(@"Please Choose from menu : 
+A - Add Item.
+B - Display Items.
+M - Dispaly Mean of numbers.
+S - Display the smallest number.
+L - Display the largest number.
+R - Sort List.
+F - Find Number.
+C - Clear List.
+Q - Quit Program.");
                 choice = char.ToUpper(Convert.ToChar(Console.ReadLine()));
                 Console.Clear();
                 switch (choice)
@@ -99,7 +100,7 @@ Q - Quit Program");
                             {
                                 SumList += numbers[i];
                             }
-                            Console.WriteLine($"Mean Numbers In List = {SumList / numbers.Count}");
+                            Console.WriteLine($"Mean Numbers In List = {(double)(SumList / numbers.Count)}");
                             Console.WriteLine("-----------------------------------");
                         }
                         break;
@@ -195,6 +196,52 @@ Q - Quit Program");
 
                         }
                         break;
+                    case 'F':
+                        if (numbers.Count == 0)
+                        {
+                            Console.WriteLine("----------------------------");
+                            Console.WriteLine("The list is empty.");
+                            Console.WriteLine("----------------------------");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please Enter Number");
+                            bool checkHsInt = int.TryParse(Console.ReadLine(), out int intNumber);
+                            if (checkHsInt)
+                            {
+                                bool isFound = false;
+                                int index = 0;
+
+                                for (int i = 0; i < numbers.Count; i++)
+                                {
+                                    if (numbers[i] == intNumber)
+                                    {
+                                        isFound = true;
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                                if (isFound)
+                                {
+                                    Console.WriteLine($"Found {intNumber} in List. as index {index}");
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-----------------------------------------");
+                                    Console.WriteLine($"{intNumber} is not found in list.");
+                                    Console.WriteLine("-----------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-----------------------------------------");
+                                Console.WriteLine("Invalid Number. Please enter a valid number.");
+                                Console.WriteLine("-----------------------------------------");
+                            }
+
+                        }
+                        break; // A - Add Item
                     case 'C': // Clear Number In List 
                         if (numbers.Count == 0)
                         {
