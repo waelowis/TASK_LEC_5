@@ -52,13 +52,17 @@ Q - Quit Program.");
                                 }
                                 else
                                 {
+                                    Console.WriteLine("-----------------------------------------");
                                     Console.WriteLine("Transaction Canceled.");
+                                    Console.WriteLine("-----------------------------------------");
                                 }
                             }
                             else
                             {
                                 numbers.Add(number);
+                                Console.WriteLine("-----------------------------------------");
                                 Console.WriteLine($"{number} is added to the list.");
+                                Console.WriteLine("-----------------------------------------");
                             }
                         }
                         else
@@ -100,6 +104,7 @@ Q - Quit Program.");
                             {
                                 SumList += numbers[i];
                             }
+                            Console.WriteLine("-----------------------------------------");
                             Console.WriteLine($"Mean Numbers In List = {(double)(SumList / numbers.Count)}");
                             Console.WriteLine("-----------------------------------");
                         }
@@ -140,6 +145,7 @@ Q - Quit Program.");
                             {
                                 largestNmuber = numbers[i] > largestNmuber ? numbers[i] : largestNmuber;
                             }
+                            Console.WriteLine("-----------------------------------");
                             Console.WriteLine($"largest Number in  List = {largestNmuber}");
                             Console.WriteLine("-----------------------------------");
                         }
@@ -257,13 +263,17 @@ Q - Quit Program.");
                             if (chooseSure == 'Y')
                             {
                                 numbers.Clear();
+                                Console.WriteLine("----------------------------");
                                 Console.WriteLine("List Is Cleared");
+                                Console.WriteLine("----------------------------");
                             }
                             else
                             {
+                                Console.WriteLine("----------------------------");
                                 Console.WriteLine("TransAction Cancelsd");
+                                Console.WriteLine("----------------------------");
                             }
-                            Console.WriteLine("-----------------------------------");
+
                         }
                         break;
                     case 'Q':
