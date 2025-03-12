@@ -66,7 +66,7 @@ Q - Quit Program");
                             Console.WriteLine("Invalid Number. Please enter a valid number.");
                             Console.WriteLine("-----------------------------------------");
                         }
-                        break;
+                        break; // A - Add Item
                     case 'B':
                         if (numbers.Count == 0)
                         {
@@ -82,7 +82,7 @@ Q - Quit Program");
                             Console.WriteLine($"[ {listshow} ] ");
                             Console.WriteLine("----------------------------");
                         }
-                        break;
+                        break; //B - Display Items
                     case 'M': // Mean Numbers In List
                         if (numbers.Count == 0)
                         {
