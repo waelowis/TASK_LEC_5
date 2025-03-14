@@ -234,7 +234,7 @@ Q - Quit");
                                     case 'A': // تصاعدي
                                         for (int i = 0; i < numbers.Count - 1; i++)
                                         {
-                                            for (int j = 0; j < numbers.Count - i - 1; j++)
+                                            for (int j = 0; j < numbers.Count - 1; j++)
                                             {
                                                 if (numbers[j] > numbers[j + 1])
                                                 {
@@ -253,7 +253,7 @@ Q - Quit");
                                     case 'D': // تنازلي
                                         for (int i = 0; i < numbers.Count - 1; i++)
                                         {
-                                            for (int j = 0; j < numbers.Count - i - 1; j++)
+                                            for (int j = 0; j < numbers.Count - 1; j++)
                                             {
                                                 if (numbers[j] < numbers[j + 1])
                                                 {
